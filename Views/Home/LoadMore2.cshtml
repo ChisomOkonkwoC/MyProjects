@@ -1,0 +1,126 @@
+﻿@model Ecommerce.ViewModel.UserProductViewModel
+@{
+    ViewBag.Title = "Load More";
+}
+<div class="review-nav-container">
+         <ul class="review-nav">
+       <li><a href="#" class="active">Home</a></li>
+       <li>/</li>
+       <li><a href="#" style="color: #262626;">Hot Deals</a></li>
+         </ul>
+
+       </div>
+
+       <div class="hot-deals-container">
+         <div class="hot-deals" >
+           <h3>Hot deals</h3>
+           <div class="numbers">
+           <li><a href="#">Nike</a></li>
+          <p>15</p>
+          </div>
+          <div class="numbers">
+           <li><a href="#">Air Max</a></li>
+           <p>9</p>
+          </div>
+          <div class="numbers">
+           <li><a href="#">Nike</a></li>
+          <p>13</p>
+          </div>
+          <div class="numbers">
+           <li><a href="#">Adidas</a></li>
+           <p>14</p>
+          </div>
+          <div class="numbers">
+           <li><a href="#">Vans</a></li>
+          <p>12</p>
+          </div>
+          <div class="numbers">
+           <li><a href="#">All Stars</a></li>
+           <p>32</p>
+          </div>
+          <div class="numbers">
+           <li><a href="#">Adidas</a></li>
+           <p>11</p>
+          </div>
+          </div>
+    <div class="addidas-wrapper">
+      <div class="addidas-container">
+          <div class="addidas-text">
+              <h3>Addidas Men Running Sneakers</h3>
+              <p>Performance and design. Taken right to the edge.</p>
+              <a href="">Shop Now</a>
+          </div>
+          <div class="addidas-img">
+              <img src="images/shoes-shoe-png-transparent-shoe-images-pluspng-17 1.png" alt="" width="500px" >
+  
+          </div>
+  
+      </div>
+      <div class="arrangement">
+        <ul class="sorting">
+        <li><a href="#"> 13 items</a></li>
+        <li><a href="#">Sort By</a></li>
+        <li><a href="#">Name</a></li>
+        <li><a href="#"><i class="fa fa-caret-down"></i></a></li>
+        <li><a href="#">Show</a></li>
+        <li><a href="#">12</a></li>
+        <li><a href="#"><i class="fa fa-caret-down"></i></a></i></li>
+        <div class="bars">
+          <li><a href="#"><i class="fas fa-bars"></i></a></li>
+          <li><a href="#"><i class="fas fa-grip-horizontal"></i></a></li>
+        </div>
+      </ul>
+
+      </div>
+  </div>
+</div>
+
+    
+        @foreach(var product in Model.Paginate(Model.Products))
+        {
+            <div class="loadmore-wrapper">
+            <div class="loadmore-item">
+              <div class="img-item">
+                    <img src=@product.ProductImage alt="">
+                </div>
+                <div class="item-text">
+                <h3>Louis Vitton Express</h3>
+                <p class="stars  reviews">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span style="color:#262626 ;"> 0 reviews</span>
+                     <a href="#">submit a review</a>
+                  </p>
+                  <hr>
+                  <div class="load-price">
+                    <p >$@product.UnitPrice</p>
+                    <p>$@product.DiscountedUnitPrice</p>
+                    <p>@product.PercentOff% Off</p>
+                  </div>
+        
+                  <p class="desc"><strong>Description</strong> <br>@product.Description</p>
+
+
+                  <div class="cart">
+                    <a href="#"><i class="fas fa-shopping-cart"></i> Add to cart</a>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                </div>
+
+                </div>
+           </div>
+           <hr>
+           
+        </div>  
+        }   
+        <div class="pagination">
+    @for(int i = 1; i <= Model.PageCount(Model.Products); i++)
+    {
+        <span class="@(i == Model.CurrentPage ? "index-active" : "index")">
+            <a href="@Url.Action("LoadMore2", new {page = i})">@i</a></span>
+        Model.CurrentPage++;
+    }
+</div>
+    

@@ -1,0 +1,30 @@
+[
+  {
+    "FirstName": "Pietra",
+    "LastName": "Cundy",
+    "FullName": "Pietra Cundy",
+    "Email": "pcundy0@google.de",
+    "Password": "Female"
+  },
+  {
+    "FirstName": "Gracie",
+    "LastName": "Rolfs",
+    "FullName":  "Gracie Rolfs",
+    "Email": "grolfs9@craigslist.org",
+    "Password": "Female"
+  },
+  {
+    "FirstName": "deji",
+    "LastName": "ogunsanmi",
+    "FullName": "deji ogunsanmi ",
+    "Email": "dronesheye@gmail.com",
+    "Password": "sheye"
+  },
+  {
+    "FirstName": "deji",
+    "LastName": "ogunsanmi",
+    "FullName": "deji ogunsanmi",
+    "Email": "dronesheye@gmail.com",
+    "Password": "chelsea"
+  },
+]
